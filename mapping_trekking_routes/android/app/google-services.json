@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "414212096340",
+    "firebase_url": "https://mapping-trekking-routes-default-rtdb.firebaseio.com",
+    "project_id": "mapping-trekking-routes",
+    "storage_bucket": "mapping-trekking-routes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414212096340:android:e6a93b3a4c155f223e48c1",
+        "android_client_info": {
+          "package_name": "com.example.mapping_trekking_routes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414212096340-4rvi1s5q2p97igt92rrdalevoobc8vj0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mapping_trekking_routes",
+            "certificate_hash": "ab0cedbf5aa8a71124fcd7948947383aabb20dcd"
+          }
+        },
+        {
+          "client_id": "414212096340-mtooorv0n6lgp27tg3e1o9ro9stlh9sh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mapping_trekking_routes",
+            "certificate_hash": "e8a533155d54b3b47d687c293421815e5fcdee51"
+          }
+        },
+        {
+          "client_id": "414212096340-4tb9brp89bpmknn24kv7oenb8pkgf4pf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA36SoAF6JNL2V4E883Vwa50sdvY5QS-i0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414212096340-4tb9brp89bpmknn24kv7oenb8pkgf4pf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
