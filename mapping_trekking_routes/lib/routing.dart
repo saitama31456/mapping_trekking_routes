@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mapping_trekking_routes/constants/classes.dart';
 import 'package:mapping_trekking_routes/ui/screens/detail_screen.dart';
 import 'package:mapping_trekking_routes/ui/screens/home_screen.dart';
+import 'package:mapping_trekking_routes/ui/screens/login_screen.dart';
 import 'package:mapping_trekking_routes/ui/screens/profile_screen.dart';
 import 'package:mapping_trekking_routes/ui/screens/search_screen.dart';
 import 'package:mapping_trekking_routes/ui/screens/splash_screen.dart';
@@ -14,6 +15,13 @@ class Routing {
         {
           return MaterialPageRoute(
               builder: (_) => const SplashScreen(),
+              settings: RouteSettings(name: settings.name));
+        }
+
+        case Classes.loginScreen:
+        {
+          return MaterialPageRoute(
+              builder: (_) => const LoginScreen(),
               settings: RouteSettings(name: settings.name));
         }
 
