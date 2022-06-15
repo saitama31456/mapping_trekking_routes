@@ -1,4 +1,22 @@
-class Trails {
+import 'dart:math';
+
+class Trail {
+  final Random _random = Random();
+  final List<String> months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+
   int? id;
   String? name;
   String? location;
@@ -8,8 +26,11 @@ class Trails {
   String? elevation;
   String? length;
   String? image;
+  String? bestTimeToVisit;
+  int? starCnt;
+  String? time;
 
-  Trails({
+  Trail({
     required this.id,
     required this.name,
     required this.location,
@@ -21,7 +42,7 @@ class Trails {
     required this.image,
   });
 
-  Trails.fromJson(Map<String, dynamic> json) {
+  Trail.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
     this.name = json['name'];
     this.location = json['location'];
@@ -31,5 +52,8 @@ class Trails {
     this.elevation = json['elevation'];
     this.length = json['length'];
     this.image = json['image'];
+    this.starCnt = _random.nextInt(4) + 1;
+    this.bestTimeToVisit = months[_random.nextInt(11)];
+    time = '${_random.nextInt(9) + 1} hr';
   }
 }

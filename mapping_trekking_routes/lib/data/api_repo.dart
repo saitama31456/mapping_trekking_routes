@@ -8,7 +8,7 @@ class ApiRepository {
     apiClient = ApiClient();
   }
 
-  static Future<dynamic> getConversationSearchResults() {
+  static Future<dynamic> getTrailsData() {
     return apiClient.getData(ApiConstant.BASE_URL);
   }
 }

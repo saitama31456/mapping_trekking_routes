@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mapping_trekking_routes/constants/classes.dart';
+import 'package:mapping_trekking_routes/model/trail.dart';
 import 'package:mapping_trekking_routes/ui/screens/detail_screen.dart';
 import 'package:mapping_trekking_routes/ui/screens/home_screen.dart';
 import 'package:mapping_trekking_routes/ui/screens/profile_screen.dart';
@@ -34,8 +35,12 @@ class Routing {
       case Classes.detailScreen:
         {
           return MaterialPageRoute(
-              builder: (_) => const DetailScreen(),
-              settings: RouteSettings(name: settings.name));
+              builder: (_) {
+                final args = settings.arguments as Trail;
+                return DetailScreen(trail: args);
+              },
+              settings: settings 
+          );
         }
       
       case Classes.profileScreen:

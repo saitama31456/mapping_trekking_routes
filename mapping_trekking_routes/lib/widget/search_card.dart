@@ -4,13 +4,13 @@ import 'package:mapping_trekking_routes/constants/colors.dart';
 import 'package:mapping_trekking_routes/constants/dimension.dart';
 import 'package:mapping_trekking_routes/widget/custom_text.dart';
 
-class MountainCard extends StatelessWidget {
+class SearchMountainCard extends StatelessWidget {
   final String? name;
   final String? location;
   final String? image;
   final int? starCnt;
 
-  const MountainCard({Key? key, required this.name, required this.location, required this.image, required this.starCnt})
+  const SearchMountainCard({Key? key, required this.name, required this.location, required this.image, required this.starCnt})
       : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class MountainCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: Dimension.scaleWidth(250, context),
+            // width: Dimension.scaleWidth(250, context),
             height: Dimension.scaleHeight(120, context),
             child: ClipRRect(
               borderRadius: BorderRadius.only(

@@ -10,7 +10,7 @@ class ApiClient {
       Response _response = await _dio.get(url);
       if (_response.statusCode == 200 || _response.data != null) {
         // onSuccess
-        return _response;
+        return _response.data;
       } else {
         // onFailure
         return Future.value("Something Went Wrong");
