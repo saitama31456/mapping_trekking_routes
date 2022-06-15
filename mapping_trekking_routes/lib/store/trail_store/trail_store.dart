@@ -4,12 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:mapping_trekking_routes/data/api_repo.dart';
 import 'package:mapping_trekking_routes/model/trail.dart';
 import 'package:mobx/mobx.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'trail_store.g.dart';
 
 class TrailStore = _TrailStore with _$TrailStore;
 
 abstract class _TrailStore with Store {
+  SharedPreferences? sharedPreferences;
 /**********************************************************************************/
   ///OBSERVER
 
@@ -27,6 +29,9 @@ abstract class _TrailStore with Store {
 
   @observable
   bool flag = false;
+
+  @observable
+  String? name;
 /**********************************************************************************/
   ///ACTIONS
 
@@ -46,6 +51,12 @@ abstract class _TrailStore with Store {
     } else {
       flag = true;
     }
+  }
+
+  @action
+  void setName() async {
+    sharedPreferences = await  SharedPreferences.getInstance();
+    name = sharedPreferences!.getString('name');
   }
 
   void _setData() {

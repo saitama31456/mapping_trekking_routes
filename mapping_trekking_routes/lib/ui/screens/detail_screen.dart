@@ -331,7 +331,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   height: Dimension.scaleHeight(5, context),
                                 ),
                                 Text(
-                                  "22°C",
+                                  "20°C",
                                   style: TextStyle(
                                       fontSize: Dimension.scaleHeight(16, context),
                                       fontWeight: FontWeight.w300),
@@ -358,7 +358,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   height: Dimension.scaleHeight(5, context),
                                 ),
                                 Text(
-                                  "22°C",
+                                  "21°C",
                                   style: TextStyle(
                                       fontSize: Dimension.scaleHeight(16, context),
                                       fontWeight: FontWeight.w300),
@@ -385,7 +385,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   height: Dimension.scaleHeight(5, context),
                                 ),
                                 Text(
-                                  "22°C",
+                                  "20°C",
                                   style: TextStyle(
                                       fontSize: Dimension.scaleHeight(16, context),
                                       fontWeight: FontWeight.w300),
@@ -412,7 +412,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   height: Dimension.scaleHeight(5, context),
                                 ),
                                 Text(
-                                  "22°C",
+                                  "18°C",
                                   style: TextStyle(
                                       fontSize: Dimension.scaleHeight(16, context),
                                       fontWeight: FontWeight.w300),

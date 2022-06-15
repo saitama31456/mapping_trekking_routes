@@ -17,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   List pages = [
     const HomeScreen(),
     const SearchScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   void onTapNav(int index) {

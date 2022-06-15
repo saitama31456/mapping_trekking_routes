@@ -6,6 +6,7 @@ import 'package:mapping_trekking_routes/constants/dimension.dart';
 import 'package:mapping_trekking_routes/store/trail_store/trail_store.dart';
 import 'package:mapping_trekking_routes/widget/mountain_card.dart';
 import 'package:mobx/mobx.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,12 +17,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late TrailStore _trailStore;
+  late SharedPreferences sharedPreferences;
 
   @override
   void initState() {
     super.initState();
     _trailStore = TrailStore();
     _trailStore.getTrails();
+    _trailStore.setName();
   }
 
   @override
@@ -236,7 +239,7 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text(
-          "Good Morning Ashik,",
+          "Good Morning ${_trailStore.name ?? ""},",
           style: TextStyle(
               fontSize: Dimension.scaleHeight(30, context),
               fontWeight: FontWeight.bold,

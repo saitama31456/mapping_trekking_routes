@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mapping_trekking_routes/constants/assets.dart';
@@ -20,7 +21,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
+      if(FirebaseAuth.instance.currentUser == null){
+      Navigator.pushNamedAndRemoveUntil(context, Classes.loginScreen, (route) => false);
+      } else{
       Navigator.pushNamedAndRemoveUntil(context, Classes.bottomNav, (route) => false);
+      }
     });
   }
 

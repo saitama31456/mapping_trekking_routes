@@ -1,12 +1,36 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mapping_trekking_routes/constants/colors.dart';
 import 'package:mapping_trekking_routes/constants/dimension.dart';
 import 'package:mapping_trekking_routes/widget/custom_button.dart';
+import 'package:mapping_trekking_routes/constants/classes.dart';
+import 'package:mapping_trekking_routes/utils/firebase_methods.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfileScreen extends StatefulWidget {
+  ProfileScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  String? userName;
+  String? email;
+  String? image;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setData();
+  }
+
+  void setData() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    userName = sharedPreferences.getString('name');
+    email = sharedPreferences.getString('email');
+    image = sharedPreferences.getString('userImage');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +90,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       SizedBox(height: Dimension.scaleHeight(6, context)),
                       Text(
-                        'login.user!.email',
+                        'saini4400@gmail.com',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: Dimension.scaleHeight(24, context),
@@ -92,11 +116,8 @@ class ProfileScreen extends StatelessWidget {
                         child: CustomButton(
                             title: 'Logout',
                             onPress: () async {
-                              print('logout');
-                              SharedPreferences preferences = await SharedPreferences.getInstance();
-                              preferences.clear();
-                              FirebaseAuth.instance.signOut();
-                              // Navigator.pushNamedAndRemoveUntil(context, Classes.googleSignin, (route) => false);
+                             FirebaseMethods().signOutGoogle(context);
+                              Navigator.pushNamedAndRemoveUntil(context, Classes.loginScreen, (route) => false);
                             }),
                       )
                     ],
@@ -106,7 +127,6 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      ));
   }
 }
