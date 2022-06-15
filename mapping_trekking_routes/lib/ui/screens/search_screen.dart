@@ -7,7 +7,6 @@ import 'package:mapping_trekking_routes/store/search_store/search_store.dart';
 import 'package:mapping_trekking_routes/store/trail_store/trail_store.dart';
 import 'package:mapping_trekking_routes/widget/mountain_card.dart';
 import 'package:mapping_trekking_routes/widget/search_card.dart';
-import 'package:provider/provider.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
